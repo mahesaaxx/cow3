@@ -474,8 +474,7 @@ def dump(token,nama,ttl):
 	print("")
 	print(f" *** Password sudah tersedia nama_depan123 - 12345 & nama lengkap. Jika ingin menambahkan password silahkan isi dibawah!")
 	print(f" *** Contoh bangsat,bangsat123,bangsat12345,bangsatlu,anjing,anjing123,anjing12345,babi,babi123,babi12345,,kontol,kontol123,kontol12345,memek,memek123,memek12345,jembut,jembut123,jembut12345,jancok,jancok123,jancok12345,anjay,anjay123,anjay12345,ganteng,ganteng123,ganteng12345,akuganteng,guaganteng,sayaganteng,cantik,cantik123,cantik12345,akucantik,sayacantik,guacantik,sayang,sayang123,sayang12345,akusayangkamu,sayangkamu,cinta,cinta123,cinta12345,akucintakamu,cintakamu,rahasia,rahasia123,rahasia12345,rahasiabanget,lupasandi,masukansandi,bebas,bebas123,bebas12345,terserah,mancung,pesek,akumancung,akupesek
-akuimut,persib1933,persija1928,apaya,indonesia12345,rahasia,doraemon
- masukan {biru}'t'{putih} untuk tidak menambahkan password\n")
+akuimut,persib1933,persija1928,apaya,indonesia12345,rahasia,doraemon masukan {biru}'t'{putih} untuk tidak menambahkan password\n")
 	if(pi in ("01","1")):
 		with Bool(max_workers=35) as kirim:
 			pas=input(f"[{ijo}+{putih}] Masukan password tambahan\t: ").replace(" ","").split(",")
