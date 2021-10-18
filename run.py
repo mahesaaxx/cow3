@@ -510,7 +510,7 @@ def dump(token,nama,ttl):
 			exit(f"\n[{ijo}√{putih}] TERIMA KASIH")
 	elif(pi in ("02","2")):
 		with Bool(max_workers=35) as kirim:
-			pas=input(f"[{ijo}+{putih}] Masukan password tambahan\t: ").replace(" ","").split(",")
+			pas=input(f"[{ijo}+{putih}] Masukan password tambahan\t: ").replace(" ","").split("pass.txt")
 			op=input(f"[{biru}?{putih}] Munculkan opsi cp [y/t]\t: ")
 			print("\n *** Crack berjalan CTRL + Z untuk stop crack\n")
 			if(op in ('y','Y')):
@@ -521,7 +521,7 @@ def dump(token,nama,ttl):
 				opsi.append('t')
 			for ajg in id:
 				try:
-					uid,name,lengkap=ajg.split("|")
+					uid,name,lengkap=ajg.split("pass.txt")
 				except:exit()
 				if(len(str(name.lower()))<=3):
 					continue
